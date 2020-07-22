@@ -1,0 +1,1232 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.19.2003.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-0EA3BCAB714D47A99D970F070C852B2D">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-0EA3BCAB714D47A99D970F070C852B2D" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Documents" Description="" DocumentTemplate="{site}/Gedeelde documenten/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" Url="Gedeelde documenten" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" DefaultDisplayFormUrl="{site}/Gedeelde documenten/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Gedeelde documenten/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Gedeelde documenten/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{EA44143F-1533-4D59-96A2-223F285906A9}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/Gedeelde documenten/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Form Templates" Description="This library contains administrator-approved form templates that were activated to this site collection." DocumentTemplate="" TemplateType="101" Url="FormServerTemplates" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/FormServerTemplates/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/FormServerTemplates/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/FormServerTemplates/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x010100F8EF98760CBA4A94994F13BA881038FA" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{49A46DD0-D4DE-41C1-9FCE-172B5C158E13}" MobileView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/FormServerTemplates/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{E927CF6C-084F-4827-B153-6750C3B9F8F1}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="Alle formulieren" Url="{site}/FormServerTemplates/Forms/All Forms.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <GroupBy Collapse="FALSE">
+                  <FieldRef Name="FormCategory" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="FormName" />
+                </OrderBy>
+                <Where>
+                  <Neq>
+                    <FieldRef Name="ShowInCatalog" />
+                    <Value Type="Boolean">0</Value>
+                  </Neq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="FormName" />
+                <FieldRef Name="FormDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="66b691cf-07a3-4ca6-ac6d-27fa969c8569" Name="FormName" DisplayName="Form Name" />
+            <pnp:FieldRef ID="65572d4d-445a-43f1-9c77-3358222a2c93" Name="FormCategory" DisplayName="Form Category" />
+            <pnp:FieldRef ID="94ad6f7c-09a1-42ca-974f-d24e080160c2" Name="FormVersion" DisplayName="Form Version" />
+            <pnp:FieldRef ID="1a03fa74-8c63-40cc-bd06-73b580bd8744" Name="FormId" DisplayName="Form ID" />
+            <pnp:FieldRef ID="96c27c9d-33f5-4f8e-893e-684014bc7090" Name="FormLocale" DisplayName="Form Locale" />
+            <pnp:FieldRef ID="1fff255c-6c88-4a76-957b-ae24bf07b78c" Name="FormDescription" DisplayName="Form Description" />
+            <pnp:FieldRef ID="4ef69ca4-4179-4d27-9e6c-f9544d45dfdc" Name="ShowInCatalog" DisplayName="Show in Catalog" />
+            <pnp:FieldRef ID="1a03fa74-8c63-40cc-bd06-73b580bd8743" Name="LinkTemplateName" DisplayName="Form Name" />
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Events" Description="" DocumentTemplate="" TemplateType="106" Url="Lists/Events" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-ec85-4903-972d-ebe475780106" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Events/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Events/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Events/NewForm.aspx" ImageUrl="/_layouts/15/images/itevent.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0102" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{36FE804C-F8E2-4573-B04C-01477526C247}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="CALENDAR" RecurrenceRowset="TRUE" DisplayName="calendar" Url="{site}/Lists/Events/calendar.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/events.png?rev=47">
+              <Query>
+                <Where>
+                  <DateRangesOverlap>
+                    <FieldRef Name="EventDate" />
+                    <FieldRef Name="EndDate" />
+                    <FieldRef Name="RecurrenceID" />
+                    <Value Type="DateTime">
+                      <Month />
+                    </Value>
+                  </DateRangesOverlap>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="EventDate" />
+                <FieldRef Name="EndDate" />
+                <FieldRef Name="fRecurrence" />
+                <FieldRef Name="EventType" />
+                <FieldRef Name="WorkspaceLink" />
+                <FieldRef Name="Title" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="Description" />
+                <FieldRef Name="Workspace" />
+                <FieldRef Name="MasterSeriesItemID" />
+                <FieldRef Name="fAllDayEvent" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData>
+                <FieldRef Name="Title" Type="CalendarMonthTitle" />
+                <FieldRef Name="Title" Type="CalendarWeekTitle" />
+                <FieldRef Name="Location" Type="CalendarWeekLocation" />
+                <FieldRef Name="Title" Type="CalendarDayTitle" />
+                <FieldRef Name="Location" Type="CalendarDayLocation" />
+              </ViewData>
+            </View>
+            <View Name="{24F0813F-4907-4AB4-ACBD-977114B6D085}" MobileView="TRUE" Type="HTML" DisplayName="All Events" Url="{site}/Lists/Events/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/events.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="EventDate" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="fRecurrence" />
+                <FieldRef Name="WorkspaceLink" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="EventDate" />
+                <FieldRef Name="EndDate" />
+                <FieldRef Name="fAllDayEvent" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{4BA12922-9B01-45B4-AC38-122B78228759}" MobileView="TRUE" Type="HTML" DisplayName="Current Events" Url="{site}/Lists/Events/MyItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/events.png?rev=47">
+              <Query>
+                <Where>
+                  <DateRangesOverlap>
+                    <FieldRef Name="EventDate" />
+                    <FieldRef Name="EndDate" />
+                    <FieldRef Name="RecurrenceID" />
+                    <Value Type="DateTime">
+                      <Now />
+                    </Value>
+                  </DateRangesOverlap>
+                </Where>
+                <OrderBy>
+                  <FieldRef Name="EventDate" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="fRecurrence" />
+                <FieldRef Name="WorkspaceLink" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="EventDate" />
+                <FieldRef Name="EndDate" />
+                <FieldRef Name="fAllDayEvent" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="288f5f32-8462-4175-8f09-dd7ba29359a9" Name="Location" DisplayName="Location" />
+            <pnp:FieldRef ID="64cd368d-2f95-4bfc-a1f9-8d4324ecb007" Name="EventDate" Required="true" DisplayName="Start Time" />
+            <pnp:FieldRef ID="2684f9f2-54be-429f-ba06-76754fc056bf" Name="EndDate" Required="true" DisplayName="End Time" />
+            <pnp:FieldRef ID="9da97a8a-1da5-4a77-98d3-4bc10456e700" Name="Description" DisplayName="Description" />
+            <pnp:FieldRef ID="7d95d1f4-f5fd-4a70-90cd-b35abc9b5bc8" Name="fAllDayEvent" DisplayName="All Day Event" />
+            <pnp:FieldRef ID="f2e63656-135e-4f1c-8fc2-ccbe74071901" Name="fRecurrence" DisplayName="Recurrence" />
+            <pnp:FieldRef ID="6df9bd52-550e-4a30-bc31-a4366832a87d" Name="Category" DisplayName="Category" />
+          </pnp:FieldRefs>
+          <pnp:FieldDefaults>
+            <pnp:FieldDefault FieldName="Category" />
+          </pnp:FieldDefaults>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="RR_GuiContent" Description="Default and custom content for GUI elements" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/RR_GuiContent" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/RR_GuiContent/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/RR_GuiContent/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/RR_GuiContent/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{A56C3903-1F9F-4E30-8537-B825613E9D76}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/RR_GuiContent/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Screen" />
+                  <FieldRef Name="Element" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Screen" />
+                <FieldRef Name="Element" />
+                <FieldRef Name="Default" />
+                <FieldRef Name="Custom" />
+                <FieldRef Name="Remark" />
+                <FieldRef Name="Deprecated" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ColumnWidth>
+                <FieldRef Name="Element" width="127" />
+                <FieldRef Name="Screen" width="167" />
+                <FieldRef Name="Default" width="566" />
+                <FieldRef Name="DefaultContent" width="124" />
+                <FieldRef Name="Custom" width="391" />
+                <FieldRef Name="Remark" width="108" />
+                <FieldRef Name="ID" width="90" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+            <View Name="{59F3E4A3-0C88-4563-B8B4-9F4D6BE528C1}" Type="HTML" DisplayName="All ItemsPerScreen" Url="{site}/Lists/RR_GuiContent/All ItemsPerScreen.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="Screen" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="Screen" />
+                  <FieldRef Name="Element" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Screen" />
+                <FieldRef Name="Element" />
+                <FieldRef Name="Default" />
+                <FieldRef Name="Custom" />
+                <FieldRef Name="Remark" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ColumnWidth>
+                <FieldRef Name="Screen" width="202" />
+                <FieldRef Name="Default" width="384" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="Screen" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{ba0851dc-2532-4506-b447-864cc9e8404d}" SourceID="{{listid:RR_GuiContent}}" StaticName="Screen" Name="Screen" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Element" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{8f829eaf-e0fd-484d-a4fc-863666d64500}" SourceID="{{listid:RR_GuiContent}}" StaticName="Element" Name="Element" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Name="Default" FromBaseType="FALSE" Type="Note" DisplayName="Default" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" RichTextMode="Compatible" IsolateStyles="FALSE" Sortable="FALSE" ID="{92940ad5-a96a-4c54-99d0-e578a1b02101}" Version="2" StaticName="Default" SourceID="{{listid:RR_GuiContent}}" ColName="ntext2" RowOrdinal="0" CustomFormatter="" RestrictedMode="TRUE" AppendOnly="FALSE" />
+            <Field Name="Custom" FromBaseType="FALSE" Type="Note" DisplayName="Custom" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" ID="{10440d5e-0aa5-4e93-a8f4-5483fbbb4c79}" Version="1" StaticName="Custom" SourceID="{{listid:RR_GuiContent}}" ColName="ntext3" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Remark" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{f873778c-4988-4128-b208-afb07ba5f2d9}" SourceID="{{listid:RR_GuiContent}}" StaticName="Remark" Name="Remark" ColName="nvarchar8" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="Deprecated" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{75b0b0a0-5b7f-45fd-9f49-ed39452a85bd}" SourceID="{{listid:RR_GuiContent}}" StaticName="Deprecated" Name="Deprecated" ColName="bit1" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://14-northeurope1.pushp.svc.ms/notifications?token=w1-1f7b9839-d813-4e61-b230-89676a459183" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="RR_Relations" Description="parent child relations" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/RR_Relations" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/RR_Relations/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/RR_Relations/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/RR_Relations/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{FC3EDB55-76E2-44C4-8FF0-7C6259C04560}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/RR_Relations/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Parent" />
+                  <FieldRef Name="Sequence" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="Key" />
+                <FieldRef Name="Parent" />
+                <FieldRef Name="Child" />
+                <FieldRef Name="Sequence" />
+                <FieldRef Name="Deprecated" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ColumnWidth>
+                <FieldRef Name="Key" width="146" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="Key" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{057ea116-6c1a-4d40-9645-1ee8b57b14ef}" SourceID="{{listid:RR_Relations}}" StaticName="Key" Name="Key" ColName="nvarchar4" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="Parent" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{9aa383c2-0ba2-4ada-a4fc-de34f0fdc11a}" SourceID="{{listid:RR_Relations}}" StaticName="Parent" Name="Parent" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Child" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{65113d16-007c-4bb0-a748-9f585631babf}" SourceID="{{listid:RR_Relations}}" StaticName="Child" Name="Child" ColName="nvarchar6" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="Sequence" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="0" ID="{7ed4ac30-43a6-49ab-bca1-65b6d0dd708b}" SourceID="{{listid:RR_Relations}}" StaticName="Sequence" Name="Sequence" ColName="float1" RowOrdinal="0">
+              <Default>1</Default>
+            </Field>
+            <Field Type="Boolean" DisplayName="Deprecated" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{9a86e487-16a2-4c83-aad8-dc0c9b1139ac}" SourceID="{{listid:RR_Relations}}" StaticName="Deprecated" Name="Deprecated" ColName="bit1" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://9-northeurope1.pushp.svc.ms/notifications?token=w2-65e52f7e-86bb-4a1e-b710-b51bb352a558" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="RR_Reservations" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/RR_Reservations" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableAttachments="false" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/RR_Reservations/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/RR_Reservations/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/RR_Reservations/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="2" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{4021B55E-7BCB-4B54-9DC8-C8BEFFE84983}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/RR_Reservations/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResSubLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="UserEmail" />
+                <FieldRef Name="UserDisplayName" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResGuest" />
+                <FieldRef Name="Imported" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+              <ColumnWidth>
+                <FieldRef Name="ID" width="90" />
+                <FieldRef Name="Created" width="126" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+            <View Name="{59504279-4026-47A3-BA0D-EE7FA8E2AF7E}" Type="HTML" DisplayName="LunchLijnden" Url="{site}/Lists/RR_Reservations/LunchLijnden.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ResLocation" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{6F949DED-6F89-4E7E-96BC-7BBF1C2C735C}" Type="HTML" DisplayName="MyItems" Url="{site}/Lists/RR_Reservations/MyItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Author" />
+                    <Value Type="User">Bart Schaap</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResResId" />
+                <FieldRef Name="ResGuest" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{411D7669-5CD4-4C20-BE6C-F6923E4ADE08}" Type="HTML" DisplayName="AllItemsOnDate" Url="{site}/Lists/RR_Reservations/AllItemsOnDate.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResDate" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResResId" />
+                <FieldRef Name="ResGuest" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{0B91EDBC-1487-43F7-9C64-06C5B7C9608E}" Type="HTML" DisplayName="Bart's Items" Url="{site}/Lists/RR_Reservations/Barts Items.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Author" />
+                    <Value Type="User">Bart Schaap</Value>
+                  </Eq>
+                </Where>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResResId" />
+                <FieldRef Name="ResGuest" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{B6B1B022-6FD2-4C2B-9484-F05B048FA539}" Type="HTML" DisplayName="Imported" Url="{site}/Lists/RR_Reservations/Imported.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Imported" />
+                    <Value Type="Boolean">1</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResSubLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="UserEmail" />
+                <FieldRef Name="UserDisplayName" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResGuest" />
+                <FieldRef Name="Imported" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{972DD0B0-43DC-4683-893B-012CB56F0273}" Type="HTML" DisplayName="NotImported" Url="{site}/Lists/RR_Reservations/NotImported.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Imported" />
+                    <Value Type="Boolean">0</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResSubLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="UserEmail" />
+                <FieldRef Name="UserDisplayName" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResGuest" />
+                <FieldRef Name="Imported" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{5E3AEED9-2BA1-42C4-BA9C-95CBD9BAD557}" Type="HTML" DisplayName="test" Url="{site}/Lists/RR_Reservations/test.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResLocation" />
+                  <FieldRef Name="UserDisplayName" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+                <Where>
+                  <Gt>
+                    <FieldRef Name="ResDate" />
+                    <Value Type="DateTime">2020-07-17T00:00:00Z</Value>
+                  </Gt>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResSubLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="UserEmail" />
+                <FieldRef Name="UserDisplayName" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResGuest" />
+                <FieldRef Name="Imported" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{DB84A806-8451-40AD-A508-D4D1D926BD88}" Type="HTML" DisplayName="test 2" Url="{site}/Lists/RR_Reservations/test 2.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResDate" />
+                  <FieldRef Name="UserDisplayName" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResSubLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="UserEmail" />
+                <FieldRef Name="UserDisplayName" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResGuest" />
+                <FieldRef Name="Imported" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{C9518B59-9FDA-447E-913E-F0A047F8DBD8}" Type="HTML" DisplayName="All Items datum" Url="{site}/Lists/RR_Reservations/All Items datum.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResSubLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="UserEmail" />
+                <FieldRef Name="UserDisplayName" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResGuest" />
+                <FieldRef Name="Imported" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{9DEC69A8-4D70-4044-AD4A-18D2E969ED24}" Type="HTML" DisplayName="All Items on date" Url="{site}/Lists/RR_Reservations/All Items on date.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                  <FieldRef Name="ResDate" Ascending="FALSE" />
+                </OrderBy>
+                <Where>
+                  <Gt>
+                    <FieldRef Name="ResDate" />
+                    <Value Type="DateTime">2020-07-17T00:00:00Z</Value>
+                  </Gt>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResLocation" />
+                <FieldRef Name="ResSubLocation" />
+                <FieldRef Name="ResDate" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="UserEmail" />
+                <FieldRef Name="UserDisplayName" />
+                <FieldRef Name="ResResourceType" />
+                <FieldRef Name="ResDuration" />
+                <FieldRef Name="ResRemark" />
+                <FieldRef Name="ResGuest" />
+                <FieldRef Name="Imported" />
+                <FieldRef Name="ResResId" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="DateTime" DisplayName="ResDate" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" FriendlyDisplayFormat="Disabled" ID="{42c4d64c-2b45-41a2-bbd5-65adaeaab590}" SourceID="{{listid:RR_Reservations}}" StaticName="ResDate" Name="ResDate" ColName="datetime1" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ResLocation" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{541d7660-7e86-4e9b-a718-32eb70ed0a68}" SourceID="{{listid:RR_Reservations}}" StaticName="ResLocation" Name="ResLocation" ColName="nvarchar4" RowOrdinal="0" />
+            <Field AppendOnly="FALSE" DisplayName="ResRemark" Format="Dropdown" IsolateStyles="FALSE" Name="ResRemark" RichText="FALSE" RichTextMode="Compatible" Title="ResRemark" Type="Note" ID="{f0fca6a3-3329-4fe1-b046-dff56d4c61b8}" SourceID="{{listid:RR_Reservations}}" StaticName="ResRemark" ColName="ntext2" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ResDuration" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{71d34c3a-4997-4d80-b07e-476b1e32ce92}" SourceID="{{listid:RR_Reservations}}" StaticName="ResDuration" Name="ResDuration" ColName="nvarchar5" RowOrdinal="0" />
+            <Field DisplayName="ResResourceType" Format="Dropdown" MaxLength="255" Name="ResResourceType" Title="ResResourceType" Type="Text" ID="{c433df57-ab1c-4dbd-ab4c-cccd74fc74f5}" SourceID="{{listid:RR_Reservations}}" StaticName="ResResourceType" ColName="nvarchar6" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ResResId" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{1c985cb0-b073-4f8c-86ec-610e43973c1a}" SourceID="{{listid:RR_Reservations}}" StaticName="ResResId" Name="ResResId" ColName="nvarchar7" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="ResGuest" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{273b3f88-fed4-4c95-9fdd-fd60008feb74}" SourceID="{{listid:RR_Reservations}}" StaticName="ResGuest" Name="ResGuest" ColName="bit1" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="ResSubLocation" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{6ab47737-1f85-4428-bb38-b355dfa58a06}" SourceID="{{listid:RR_Reservations}}" StaticName="ResSubLocation" Name="ResSubLocation" ColName="nvarchar8" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="Imported" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{032e90a9-5a72-41cd-8295-02925880cc12}" SourceID="{{listid:RR_Reservations}}" StaticName="Imported" Name="Imported" ColName="bit2" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="UserEmail" Description="email address as shown by O365 (can differ from PA email address)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{fa90d274-947d-4ad2-94ac-8433cea137d2}" SourceID="{{listid:RR_Reservations}}" StaticName="UserEmail" Name="UserEmail" ColName="nvarchar9" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="UserDisplayName" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{e948be6e-fdc4-4880-a908-e7ca1ca49b01}" SourceID="{{listid:RR_Reservations}}" StaticName="UserDisplayName" Name="UserDisplayName" ColName="nvarchar10" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://5-northeurope1.pushp.svc.ms/notifications?token=w1-10ae0b82-ac56-4b00-af3f-ad187e5360b4" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="RR_Resources" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/RR_Resources" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableAttachments="false" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/RR_Resources/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/RR_Resources/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/RR_Resources/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{3E49A07F-22CD-492D-B0A3-454E6907BF61}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/RR_Resources/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ResourceLocation" />
+                  <FieldRef Name="ResourceSublocation" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+              <ColumnWidth>
+                <FieldRef Name="ID" width="90" />
+                <FieldRef Name="ResourceDescription" width="196" />
+                <FieldRef Name="ResourceSublocation" width="175" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+            <View Name="{FDAB8180-C78D-4B7B-B6B8-0C0E5D24ED29}" Type="HTML" DisplayName="PerLocatie" Url="{site}/Lists/RR_Resources/PerLocatie.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResourceLocation" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ResourceLocation" />
+                  <FieldRef Name="ResourceType" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Deprecated" />
+                    <Value Type="Boolean">0</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{198501BB-01BF-49E7-90A5-4617433907FF}" Type="HTML" DisplayName="Non deprecated Items" Url="{site}/Lists/RR_Resources/Non deprecated Items.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResourceLocation" />
+                  <FieldRef Name="ResourceSublocation" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ResourceLocation" />
+                  <FieldRef Name="ResourceType" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Deprecated" />
+                    <Value Type="Boolean">0</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{7EBE6635-640D-488D-856E-305E6C65899F}" Type="HTML" DisplayName="Non deprecated Items Ungrouped" Url="{site}/Lists/RR_Resources/Non deprecated Items Ungrouped.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResourceSublocation" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ResourceLocation" />
+                  <FieldRef Name="ResourceType" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Deprecated" />
+                    <Value Type="Boolean">0</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{1D611704-0CA7-4386-9DA2-7033EE442C19}" Type="HTML" DisplayName="Werkplekken" Url="{site}/Lists/RR_Resources/Werkplekken.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="ResourceType" />
+                    <Value Type="Text">Werkplek</Value>
+                  </Eq>
+                </Where>
+                <OrderBy>
+                  <FieldRef Name="ResourceLocation" />
+                  <FieldRef Name="ResourceSublocation" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{86F9C0D3-8F30-4A78-B285-4A25B339683C}" Type="HTML" DisplayName="All Items Gouda" Url="{site}/Lists/RR_Resources/All Items Gouda.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResourceSublocation" />
+                  <FieldRef Name="Deprecated" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ResourceSublocation" />
+                  <FieldRef Name="ResourceID" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="ResourceLocation" />
+                    <Value Type="Text">Gouda</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{2A3B6674-95CA-4CDD-B73B-BD079FA9FACA}" Type="HTML" DisplayName="All Items Lijnden" Url="{site}/Lists/RR_Resources/All Items Lijnden.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ResourceSublocation" />
+                  <FieldRef Name="ResourceID" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="ResourceLocation" />
+                    <Value Type="Text">Lijnden</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{7F5A1304-FB89-4A6C-98E9-CB6E9CDFF8CD}" Type="HTML" DisplayName="All Items Gouda Actief" Url="{site}/Lists/RR_Resources/All Items Gouda Actief.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResourceSublocation" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ResourceSublocation" />
+                  <FieldRef Name="ResourceID" />
+                </OrderBy>
+                <Where>
+                  <And>
+                    <Eq>
+                      <FieldRef Name="ResourceLocation" />
+                      <Value Type="Text">Gouda</Value>
+                    </Eq>
+                    <Eq>
+                      <FieldRef Name="Deprecated" />
+                      <Value Type="Boolean">0</Value>
+                    </Eq>
+                  </And>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{05580A82-BFC3-414C-A9FD-B3F6101C93E3}" Type="HTML" DisplayName="Werkplekken Gouda" Url="{site}/Lists/RR_Resources/Werkplekken Gouda.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ResourceLocation" />
+                  <FieldRef Name="ResourceSublocation" />
+                </OrderBy>
+                <Where>
+                  <And>
+                    <Eq>
+                      <FieldRef Name="ResourceType" />
+                      <Value Type="Text">Werkplek</Value>
+                    </Eq>
+                    <Eq>
+                      <FieldRef Name="ResourceLocation" />
+                      <Value Type="Text">Gouda</Value>
+                    </Eq>
+                  </And>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{48B7659C-8203-40BF-9116-26F090D2C539}" Type="HTML" DisplayName="All Items Lijnden Grouped" Url="{site}/Lists/RR_Resources/All Items Lijnden Grouped.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="ResourceSublocation" />
+                  <FieldRef Name="Deprecated" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ResourceSublocation" />
+                  <FieldRef Name="ResourceID" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="ResourceLocation" />
+                    <Value Type="Text">Lijnden</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="ResourceID" />
+                <FieldRef Name="ResourceLocation" />
+                <FieldRef Name="ResourceSublocation" />
+                <FieldRef Name="ResourceType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="ResourceDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="ResourceType" Description="ResourceType ie: werkplek, laadpunt, parkeerplaats etc" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{e02dcdda-895f-4741-93c7-ba77a63ca34f}" SourceID="{{listid:RR_Resources}}" StaticName="ResourceType" Name="ResourceType" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ResourceLocation" Description="fysieke locatie van resource: Gouda, Lijnden, etc" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{2ed59a34-0349-4ead-a32c-a31ae2bd56a9}" SourceID="{{listid:RR_Resources}}" StaticName="ResourceLocation" Name="ResourceLocation" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="Deprecated" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{7c58402e-bb71-4410-9107-d8e830359293}" SourceID="{{listid:RR_Resources}}" StaticName="Deprecated" Name="Deprecated" ColName="bit1" RowOrdinal="0" CustomFormatter="" Required="FALSE" Version="2">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="ResourceSublocation" Description="verdieping 1, Verdieping 1 kamer 1, etc" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{63e7ac4b-5b2c-4a1c-a1e2-7122334a83d6}" SourceID="{{listid:RR_Resources}}" StaticName="ResourceSublocation" Name="ResourceSublocation" ColName="nvarchar6" RowOrdinal="0" CustomFormatter="" Version="1">
+              <Default>-</Default>
+            </Field>
+            <Field Type="Text" DisplayName="ResourceID" Description="unique ID of this resource (GUID)" Required="TRUE" EnforceUniqueValues="TRUE" Indexed="TRUE" MaxLength="255" ID="{8c4c5851-b86d-479e-aa7c-a0b1d182d7d6}" SourceID="{{listid:RR_Resources}}" StaticName="ResourceID" Name="ResourceID" ColName="nvarchar7" RowOrdinal="0" CustomFormatter="" Version="6" />
+            <Field DisplayName="ResourceDescription" Format="Dropdown" MaxLength="255" Name="ResourceDescription" Title="ResourceDescription" Type="Text" ID="{566b59e7-4938-46da-84f4-5aa398133726}" SourceID="{{listid:RR_Resources}}" StaticName="ResourceDescription" ColName="nvarchar8" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://5-northeurope1.pushp.svc.ms/notifications?token=w3-cca80e97-f912-4a14-b2b6-e036d0552d77" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="RR_Selections" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/RR_Selections" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableAttachments="false" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/RR_Selections/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/RR_Selections/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/RR_Selections/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{00B9B6A2-E52B-40D3-A7CD-2892807C517C}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/RR_Selections/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Key" />
+                  <FieldRef Name="Sequence" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="Key" />
+                <FieldRef Name="KeyValue" />
+                <FieldRef Name="KeyValueCustom" />
+                <FieldRef Name="Sequence" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="Selectable" />
+                <FieldRef Name="KeyDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+              <ColumnWidth>
+                <FieldRef Name="Key" width="163" />
+                <FieldRef Name="KeyValue" width="171" />
+                <FieldRef Name="KeyDescription" width="269" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+            <View Name="{1D41FD79-9C19-4B33-84A7-A6A37831170F}" Type="HTML" DisplayName="Non deprecated" Url="{site}/Lists/RR_Selections/Non deprecated.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Key" />
+                  <FieldRef Name="Sequence" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Deprecated" />
+                    <Value Type="Boolean">0</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="Key" />
+                <FieldRef Name="KeyValue" />
+                <FieldRef Name="KeyValueCustom" />
+                <FieldRef Name="Sequence" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="Selectable" />
+                <FieldRef Name="KeyDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{44B1E5CB-64F3-4D26-A73B-0E6C9AA81264}" Type="HTML" DisplayName="Deprecated" Url="{site}/Lists/RR_Selections/Deprecated.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Key" />
+                  <FieldRef Name="Sequence" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Deprecated" />
+                    <Value Type="Boolean">1</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="Key" />
+                <FieldRef Name="KeyValue" />
+                <FieldRef Name="KeyValueCustom" />
+                <FieldRef Name="Sequence" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="Selectable" />
+                <FieldRef Name="KeyDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="Key" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{60a0e944-cb94-4bab-a048-6db700039654}" SourceID="{{listid:RR_Selections}}" StaticName="Key" Name="Key" ColName="nvarchar4" RowOrdinal="0" CustomFormatter="" Version="1" />
+            <Field Type="Text" DisplayName="KeyValue" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{7b5f7dfd-a2bc-4a3a-93c5-a9993101226d}" SourceID="{{listid:RR_Selections}}" StaticName="KeyValue" Name="KeyValue" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="Sequence" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="0" ID="{35ed3c26-a2c3-4598-8b5c-bb67268f78fd}" SourceID="{{listid:RR_Selections}}" StaticName="Sequence" Name="Sequence" ColName="float1" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="Deprecated" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{15d78411-b9d4-4a62-a2a5-07a8878a9f7c}" SourceID="{{listid:RR_Selections}}" StaticName="Deprecated" Name="Deprecated" ColName="bit1" RowOrdinal="0" CustomFormatter="" Required="FALSE" Version="1">
+              <Default>0</Default>
+            </Field>
+            <Field DisplayName="KeyDescription" Format="Dropdown" MaxLength="255" Name="KeyDescription" Title="KeyDescription" Type="Text" ID="{4c1b64a1-9ba8-4db0-abf9-d26b52dc1328}" SourceID="{{listid:RR_Selections}}" StaticName="KeyDescription" ColName="nvarchar6" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="Selectable" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{f9ae93b5-9081-4a8b-8213-36866b99e95b}" SourceID="{{listid:RR_Selections}}" StaticName="Selectable" Name="Selectable" ColName="bit2" RowOrdinal="0" Description="" CustomFormatter="" Required="FALSE" Version="1">
+              <Default>1</Default>
+            </Field>
+            <Field Type="Text" DisplayName="KeyValueCustom" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{bd24952e-8669-4c11-b259-40fc625dc1e7}" SourceID="{{listid:RR_Selections}}" StaticName="KeyValueCustom" Name="KeyValueCustom" ColName="nvarchar7" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://16-northeurope1.pushp.svc.ms/notifications?token=w3-674097be-c29a-4737-bf52-bb84bd7db6d6" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="RR_Settings" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/RR_Settings" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/RR_Settings/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/RR_Settings/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/RR_Settings/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:PropertyBagEntries>
+            <pnp:PropertyBagEntry Key="wte_Source" Value="https://wortell.sharepoint.com/sites/werkplek-app-acc/Lists/RR_Selections/AllItems.aspx" Overwrite="false" />
+          </pnp:PropertyBagEntries>
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{E113525A-8FD0-48BE-9C15-A3230F64D992}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/RR_Settings/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Key" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="Key" />
+                <FieldRef Name="KeyValue" />
+                <FieldRef Name="DataType" />
+                <FieldRef Name="Deprecated" />
+                <FieldRef Name="KeyDescription" />
+                <FieldRef Name="CustomKey" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter><![CDATA[]]></CustomFormatter>
+              <ColumnWidth>
+                <FieldRef Name="KeyDescription" width="437" />
+                <FieldRef Name="Key" width="125" />
+                <FieldRef Name="KeyValue" width="182" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="Key" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{60a0e944-cb94-4bab-a048-6db700039654}" StaticName="Key" Name="Key" CustomFormatter="" SourceID="{{listid:RR_Settings}}" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="KeyValue" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{7b5f7dfd-a2bc-4a3a-93c5-a9993101226d}" StaticName="KeyValue" Name="KeyValue" SourceID="{{listid:RR_Settings}}" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="Deprecated" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{15d78411-b9d4-4a62-a2a5-07a8878a9f7c}" StaticName="Deprecated" Name="Deprecated" CustomFormatter="" Required="FALSE" SourceID="{{listid:RR_Settings}}" ColName="bit1" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field DisplayName="KeyDescription" Format="Dropdown" MaxLength="255" Name="KeyDescription" Title="KeyDescription" Type="Text" ID="{4c1b64a1-9ba8-4db0-abf9-d26b52dc1328}" StaticName="KeyDescription" SourceID="{{listid:RR_Settings}}" ColName="nvarchar6" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="CustomKey" Description="specfic setting" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{c1d2a0eb-3646-4d30-a6c4-5c08a8aa1001}" SourceID="{{listid:RR_Settings}}" StaticName="CustomKey" Name="CustomKey" ColName="bit2" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Choice" DisplayName="DataType" Description="defines datatype of keyvalue" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" ID="{575cbcd1-ca18-49af-8b6e-61e844dad09d}" SourceID="{{listid:RR_Settings}}" StaticName="DataType" Name="DataType" ColName="nvarchar7" RowOrdinal="0">
+              <Default>String</Default>
+              <CHOICES>
+                <CHOICE>String</CHOICE>
+                <CHOICE>Number</CHOICE>
+                <CHOICE>Boolean</CHOICE>
+              </CHOICES>
+            </Field>
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://13-northeurope1.pushp.svc.ms/notifications?token=w3-55299bab-498a-451d-af09-7cbd097952b3" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Site Assets" Description="Use this library to store files which are included on pages within this site, such as images on Wiki pages." DocumentTemplate="{site}/SiteAssets/Forms/template.doc" TemplateType="101" Url="SiteAssets" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" DefaultDisplayFormUrl="{site}/SiteAssets/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/SiteAssets/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/SiteAssets/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="true" ValidationFormula="" ValidationMessage="">
+          <pnp:PropertyBagEntries>
+            <pnp:PropertyBagEntry Key="IsAttachmentLibrary" Value="1" Overwrite="false" />
+          </pnp:PropertyBagEntries>
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{072DCA7F-8C8C-41CA-BF99-4A46B4D36C6D}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/SiteAssets/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ID="{d1cff744-ba61-4189-94d6-97d0a9eb4f6a}" Type="Text" DisplayName="Tags" Name="MediaServiceAutoTags" Group="_Hidden" Hidden="FALSE" Sealed="TRUE" ReadOnly="TRUE" ShowInNewForm="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" Json="FALSE" SourceID="{{listid:Site Assets}}" StaticName="MediaServiceAutoTags" ColName="nvarchar13" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Style Library" Description="Use the style library to store style sheets, such as CSS or XSL files. The style sheets in this gallery can be used by this site or any of its subsites." DocumentTemplate="" TemplateType="101" Url="Style Library" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" DefaultDisplayFormUrl="{site}/Style Library/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Style Library/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Style Library/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{6FCCAFDE-B369-4104-AB88-4FD149AB9492}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/Style Library/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
